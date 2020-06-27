@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel='stylesheet' type="text/css" media="screen and (min-width: 1024px)" href='estilo_g.css'/>
+    <link rel='stylesheet' type="text/css" media="screen and (max-width: 1023px)" href="estilo_p.css"/>
+    <link rel="shortcut icon" href="imagens/favi.ico" type="image/x-icon"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mazzei</title>
+</head>
+<body>
+    <header>
+    <section id="flutua" class="menu">
+        <a id="talk" href="http://api.whatsapp.com/send?phone=5511992547746&text=Olá!%20Obrigado%20por%20entrar%20em%20contato." target="_blank">Let's Talk :D</a>
+        <input type="checkbox" id="check">
+        <label for="check"><img src="imagens/hamburguer.png" id="opt"></label>
+        <div class="barra"> 
+            <ul id="menu"></ul>
+                <li><h1>.Mazzei</h1></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="sobre.html">Sobre mim</a></li>
+                <li><a href="#rod" onclick="some()">Contato</a></li>
+                <li><a id="wpp" href="http://api.whatsapp.com/send?phone=5511992547746&text=Olá!%20Obrigado%20por%20entrar%20em%20contato." target="_blank">Whatsapp</a></li>     
+            </ul>
+        </div>
+    </section>
+    </header>
+    <section class="Ola" id="Ola">
+        <h1>Olá! Eu sou Mateus Mazzei,</h1><h1 id="texto2">Prazer em conhecê-lo!</h1>
+        <a href="https://github.com/MAnzolin" target="_blank"><h2 id="Git">Veja esse site no Github</h2></a>
+        <img src="imagens/eu.png" alt="Minha foto" id="eu">
+    </section>
+    <section class='apres'>
+        <h1>Um pouco mais</h1></br>
+        <p>Olá, tenho 20 anos, moro em Cotia e sou estudante na Fatec-SP. Sempre gostei de desenvolvimento e design.</br>
+        Hoje dedico todo o meu foco ao desenvolvimento Web. Mas, sempre dou aquela olhada no Photoshop e no Illustrator ; )</br></br>
+        Tenho a  minha marca, além de  Mateus  Mazzei, também me apresento como  POLVO
+        </p>
+        <img src="imagens/POLVO.png" id="polvo">
+        <p><a id="cv" href="Mateus Mazzei CV.pdf" target="_blank">Download CV</a></p>
+    </section>
+    <section class="work">
+        <h1>WORKS</h1></br>
+        <div id="col1">
+            <h2>Web</h2>
+            <a href="works.html#web"><img src="imagens/mac.png"></a>
+        </div>
+        <div id="col2">
+            <h2>Design</h2>
+            <a href="works.html#artes"><img src="imagens/photo.png"></a>
+        </div>
+        <div id="col3">
+            <h2>Code</h2>
+            <a href="works.html#code"><img src="imagens/code.png"></a>
+        </div>        
+    </section>
+   <section class="contato">
+    <h1>Contato</h1>
+    <form class="fale" method="post" action="post.php" name="formulario">
+        <input class="fale" type="text" name="nome" placeholder="NOME" pattern="[^0-9]+"/>
+        <input class="fale" type="email" name="email" placeholder="E-MAIL"/>
+        <input class="fale" type="tel" name="tel" placeholder="TELEFONE" maxlength="11" minlength="8" pattern="[^A-Za-z]+"/>
+        <textarea class="fale" type="mensagem" name="mensagem" placeholder="MENSAGEM ..."></textarea>
+        <div class="button">
+            <button type="submit" name="submit" onclick="return validar()" id="botao">Enviar</button>
+        </div>
+    </form>
+   </section>
+    <section class="rodape" id="rod">
+        <div id="about">
+            <h2>Mateus Mazzei</h2>
+            <h3>Estudante de Análise e Desenvolvimento de Sistemas</h3>
+            <p>
+            Esse site serve para demonstrar um pouco do meu trabalho e quem eu sou</br><BR>
+            Caso tenha gostado e queira saber mais, mande um e-mail!</br>Podemos tomar um café e conversar sobre o seu negócio!
+            </p>
+        </div>
+        <div id="dados">
+            <h2>Fale comigo</h2> 
+            <h3>Cotia, São Paulo</h3>    
+            <p>
+            E-mail: mateus.mazzei14@gmail.com</br>
+            Tel: (11) 99254-7746
+             </p>
+        </div>
+    </section>
+    <footer>
+        <div id="parag">
+        <a id="frase">Coffee can make you happy : )</a>
+        </div>
+        <div id="imgs">
+            <a href="https://github.com/MAnzolin" target="_blank"><img src="imagens/git.png"></a>
+            <a href="http://facebook.com/mateus.mazzei2002" target="_blank"><img src="imagens/face.png"></a>
+            <a href="https://www.linkedin.com/in/mateus-mazzei-a291b5157/" target="_blank"><img src="imagens/link.png"></a>
+        </div>
+        <div id="dir"><a  onclick="erro()">Todos os direitos reservados &#9400;</a></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
