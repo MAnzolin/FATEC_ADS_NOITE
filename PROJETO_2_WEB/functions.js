@@ -15,17 +15,15 @@ function Range(val) {
 //VALIDAR-------------------------------------------------
 function validar_campos(){
     var nome = formulario.nome.value;
-    var tel = formulario.tel.value;
+    /*var tel = formulario.tel.value;
     var email = formulario.email.value; //Criação variavéis dos campos do form
-    var msg = formulario.msg.value;
+    var msg = formulario.msg.value;*/
     var bool = true; //variável booleana que confere se o formulario foi preenchido corretamente
     
-    bool = valida_nome(nome) || bool;
-    bool = valida_tel(tel) || bool;
-    bool = valida_email(email) || bool;
-    bool = valida_msg(msg) || bool;
+    if(!valida_nome(nome)) bool = false;
+ 
   
-  
+  /*
   if(tel == "" || tel == "*VALOR INVÁLIDO*" ){
     formulario.tel.value = "*VALOR INVÁLIDO*"; //Validação do Telefone
     formulario.tel.focus();
@@ -42,18 +40,16 @@ function validar_campos(){
     formulario.msg.value = "*FAVOR PREENCHER*";
     formulario.msg.focus();
     bool = false
-  }
+  }*/
   
     return bool; //Caso um dos campos nãotenha sido preenchido corretamente, não envia o form
   }
 
 function valida_nome(nome){
-    if(nome == "" || nome == "*VALOR INVÁLIDO*"){
-        formulario.nome.value = "*VALOR INVÁLIDO*";
+    if(nome == "" || nome == null ){
+        document.getElementById('erro').innerHTML  =  "Preencher o campo nome corretamente." ;
         formulario.nome.focus();
         return false;
-    } else if(isNaN(nome)) {
-        formulario.nome.value = "*VALOR INVÁLIDO*";
-        formulario.nome.focus();
-        return false;}
+    } 
+    return true;
 }
