@@ -14,13 +14,13 @@
         <form  name="formulario">
             <label for="nome">Nome Completo:</label><br>
             <input type="text" id="nome" name="nome" pattern="[^0-9]+"/><br><br>
-            <label for="tel">Telefone:</label><br>
-            <input type="tel" id="tel" name="tel" maxlength="11" minlength="8" pattern="[^A-Za-z]+"/><br><br>
+            <p id='erro_nome' class="erro"></p>
             <label for="email">E-mail:</label><br>
             <input type="email" id="email" name="email"/><br><br>
+            <p id='erro_email' class="erro"></p>
             <label for="range">De 0 a 10 qual o seu nível de conhecimento em JS?</label><br>
             <input type="range" name="range" id="range"  min="0" max="10" onchange="Range(this.value);"/>
-            <span id='resp'></span><br><br>
+            <span id='valor_range'>5</span><br><br>
             <label for="tec">Selecione sua segunda melhor área de conhecimento:</label><br>
             <select name="tec" id="tec">
                 <option value="HTML">HTML</option>
@@ -32,8 +32,8 @@
             </select><br><br>
             <label>Descreva em um texto de no máximo 300 caracteres sobre alguma habilidade especial:</label><br>
             <textarea maxlength="300"  rows="4" cols="50" id="msg" name="msg"></textarea><br><br>
+            <p id='erro_msg' class="erro"></p>
             <button type="submit" onclick="return validar_campos()">Enviar</button>
-            <p id='erro'></p>
         </form>
     </nav>
 </body>
