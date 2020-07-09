@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2 - Mateus Mazzei</title>
+</head>
+<body>
+    <input type="text" id="professor" value="Joaquim Manoel"/>
+    <button onclick="consultar_disciplina()"> Buscar </button>
+    <p>Materias:</p>
+    <p id="resp"></p>
+    
+    <script>
+        var Joaquim = ['Portugês', 'Matemática', 'História'];
+        var Paulo = ['LPIV', 'PHP', 'JavaScript','CSS'];
+        var Ricardo = ['Cálculo I', 'Cálculo II', 'Álgebra'];
+        var Mauricio = ['Biologia', 'Física'];
+
+        function consultar_disciplina(){
+        document.getElementById('resp').innerHTML ="";
+        var nome =  document.getElementById('professor').value;
+        var materias = [];
+        switch (nome) {
+            case '': return;
+            case 'Joaquim Manoel':materias = Joaquim; break;
+            case 'Paulo Bernice':materias = Paulo; break;
+            case 'Ricardo Chaves':materias = Ricardo; break;
+            case 'Mauricio Naves':materias = Mauricio; break;
+            default:  document.getElementById('resp').innerHTML = 'professor não encontrado';
+        }
+        for(var i=0; i < materias.length; i++){
+            document.getElementById('resp').innerHTML += " | " + materias[i];
+        }
+    }
+    </script>
+</body>
+</html>

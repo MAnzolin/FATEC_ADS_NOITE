@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2 - Mateus Mazzei</title>
+</head>
+<body>
+    <h1>Cronômetro Total</h1>
+    <p id="cron1">00:00:00</p>
+    <h1>Cronômetro Parcial</h1>
+    <p id="cron2">00:00:00</p>
+    <br>
+    <button onclick="start()">Iniciar</button>
+    <button onclick="stop()">Parar</button>
+    <script>
+        var cron_tot,cron_par, tempo=100;
+        var h1=0, m1=0,s1=0,h2=0, m2=0,s2=0;
+        var bool = false;
+        function start(){
+            h2 =0;
+            m2=0;
+            s=0;
+            clearInterval(cron_par);
+            cron_par = setInterval(() => {cron2();},tempo);
+            if(!bool){ 
+                cron_tot = setInterval(() => {cron1();},tempo);
+                bool = true;
+            }
+        }
+        function stop(){
+            clearInterval(cron_tot);
+            clearInterval(cron_par);
+        }
+        function cron1(){
+            s1++;
+            if(s1==60){
+                s1=0;
+                m1++;
+            }
+
+            if(m1==60){
+                m1 = 0;
+                h1++;
+            }
+            var label = (h1 < 10? '0'+h1 : +h1) + ':' +(m1 < 10? '0'+m1 : +m1) + ':' +(s1 < 10? '0'+s1 : +s1);
+            document.getElementById('cron1').innerHTML = label;
+        }
+        function cron2(){
+            s2++;
+            if(s2==60){
+                s2=0;
+                m2++;
+            }
+
+            if(m2==60){
+                m2 = 0;
+                h2++;
+            }
+            var label = (h2 < 10? '0'+h2 : +h2) + ':' +(m2 < 10? '0'+m2 : +m2) + ':' +(s2 < 10? '0'+s2 : +s2);
+            document.getElementById('cron2').innerHTML = label;
+        }
+    </script>
+</body>
+</html>
