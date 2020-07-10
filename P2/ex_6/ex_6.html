@@ -6,17 +6,23 @@
     <title>P2 - Mateus Mazzei</title>
 </head>
 <body>
+    <button onclick="jogar()">Jogar</button>
     <div id="resp"></div>
     <script>
-        var resultado,valor,i = 3;
-    do{
-        resultado = Math.floor(Math.random() * 10);
-        valor = prompt('Digite um número de 0 a 10. Você tem '+i+' chances');
-    }while(resultado != valor && --i > 0);
-    
-    if(resultado == valor) alert("Você ganhou!");
-    else alert("Você perdeu!");
-
+    function jogar(){
+        var array = [],resultado,valor,i = 3;
+        var resp = document.getElementById('resp');
+        do{
+            resultado = Math.floor(Math.random() * 10);
+            valor = prompt('Digite um número de 0 a 10. Você tem '+i+' chances'+resultado);
+            array.push(resultado);
+        }while(resultado != valor && --i > 0);
+        
+        if(resultado == valor) alert("Você ganhou!");
+        else alert("Você perdeu!");
+        alert("Resultados: "+array);
+    }
+    jogar();
     </script>
 </body>
 </html>
