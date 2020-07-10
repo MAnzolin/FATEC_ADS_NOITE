@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2 - Mateus Mazzei</title>
+</head>
+<body>
+    <div id="resp"></div>
+    <script>
+        var resultado,valor,i = 3;
+    do{
+        resultado = Math.floor(Math.random() * 10);
+        valor = prompt('Digite um número de 0 a 10. Você tem '+i+' chances');
+    }while(resultado != valor && --i > 0);
+    
+    if(resultado == valor) alert("Você ganhou!");
+    else alert("Você perdeu!");
+
+    </script>
+</body>
+</html>
