@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2 - Mateus Mazzei</title>
+</head>
+<body>
+    <img src="coracao.png" style='width:250px;' id="coracao">
+    <script>
+
+    var tempo = 1000;
+    var count = 250;
+    function start(){
+        cron = setInterval(() => {contar();}, tempo)
+    }
+
+    function contar(){
+        if(count <= 250) count = count + 50;
+        else count = count - 50;
+        var string = count.toString() + 'px';
+        document.getElementById('coracao').style.width = string;
+    }
+
+    start();
+    </script>
+</body>
+</html>
