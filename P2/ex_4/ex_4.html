@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2 - Mateus Mazzei</title>
+</head>
+<body>
+   <div id="container"></div>
+   </table>
+    <script>
+        var container = document.getElementById("container");
+        var dados = [{nome: 'Mateus Mazzei',peso: 80, altura: 1.82},
+                    {nome: 'Marcos Felipe',peso: 95, altura: 1.85},
+                    {nome: 'Maria Capalbo',peso: 80, altura: 1.6},
+                    {nome: 'Rogéria Farias',peso: 60, altura: 1.86},
+                    {nome: 'Vinícius Ferrara',peso: 110, altura: 1.74}];
+        var table = [
+        '<table>',
+        '<thead>',
+        '<tr>',
+        '<th>IMC</th>',
+        '<th>Faixa de risco</th>',
+        '</tr>',
+        '</thead>',
+        '<tbody>'
+        ].join("\n");
+        
+        function get_imc(num){
+            var string;
+            if(num < 20) string = 'Abaixo do peso';
+            else if(num >= 20 && num <= 25) string = 'Normal';
+            else if( num > 25 && num <= 30) string = 'Excesso de peso';
+            else if(num > 30 && num <= 35) string = 'Obesidade';
+            else if(num > 35) string = 'Obesidade mórbida';
+            else string = 'alerta de erro';
+            return string;
+        }
+
+        function calcular_imc(dados){
+            var imc,resp;
+            for(var i=0; i<dados.length; i++){
+                imc = dados[i].peso/((dados[i].altura)**2);
+                resp = get_imc(imc);
+                table += '<tr><td>'+dados[i].nome+'</td><td>'+resp+'</td></tr>';
+            }
+            table += '</tbody>\n</table>';
+            container.innerHTML = table;
+        }
+        calcular_imc(dados);
+
+    </script>
+
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 400px;
+            text-align: center;
+        }
+        th{
+            background-color: rgb(34, 123, 238);
+            color: white;
+        }
+    </style>
+</body>
+</html>

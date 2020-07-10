@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2 - Mateus Mazzei</title>
+</head>
+<body>
+    <div id="resp"></div>
+    <script>
+        var array_nomes = [], nome, bool;
+        var lista = '<ol>';
+        do{
+            nome = prompt("Digite um nome");
+            array_nomes.push(nome);
+            bool = prompt("Deseja continuar? <qualquer tecla> sim | <vazio ou zero> não");
+        }while(bool);
+
+        array_nomes.sort();
+        array_nomes.reverse();
+        for(var i=0;i < array_nomes.length; i++){
+            lista += '<li>' + array_nomes[i].toLowerCase() + '</li>';
+            console.log(array_nomes[i]);
+        }
+        lista += '</ol>';
+        document.getElementById('resp').innerHTML = lista;
+    </script>
+</body>
+</html>
